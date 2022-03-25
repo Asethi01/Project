@@ -6,8 +6,85 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-color: black;
+        background-image: url("images/F1.jpg");
+        background-size: 1550px 1000px;
+        background-repeat: no-repeat;
+    }
+    #heading{
+        color: rgba(248, 10, 10, 0.781);
+        text-align: center;
+        font-size: 3.2em;
+        font-family: sans-serif;
+        padding: 25px 0 20px;
+    }
+    li{
+        display: inline-block;
+        border-right: 2.25px solid red;
+        font-size: 1.3em;
+    }
+    ul{
+        background-color: rgb(0, 0, 0);
+    }
+    li a {
+        text-decoration: none;
+        color: lightgray;
+        padding: 0.5em 8px 0.5em;
+    }
+    #updates{
+        color: beige;
+        font-family: sans-serif;
+    }
+    tr, td{
+    border: 3px solid rgb(12, 12, 160);
+    padding: 3px;
+    color: rgb(216, 169, 81);
+    vertical-align: top; 
+    background-color: rgba(245, 245, 220, 0.616);   
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: larger;
+    }
+    table{
+    width: 60em;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+}
+    img{
+        width: 100%;
+    }
+</style>
 <body>
-    <h1>This is a test</h1>
-    <p>I really hope this is working!</p>
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="">Recent Race Highlights and Schedule</a></li>
+        <li><a href="">Customer Feedback</a></li>
+    </ul>
+    <!-- <img id= "max" src="images/F1.jpg" alt="formula 1" title="f1 intro"> -->
+    <h1 id="heading">Welcome to Forumula Updates!</h1>
+    <h1 id="updates">Most recent updates:-</h1>
+    <table>
+        <tr>
+            <td>Troubles at Mclaren after a dissapointing start. After an amazing showing
+                in the barcelona test, both drivers have struggled to be at one
+                with the car and are constantly complaining. After the dissapointing
+                finish with no points in Bahrain in it clear that they have lost their 
+                momentum from previous years.
+            </td>
+            <td><img src="images/mclaren.jpg" alt="Mclaren car" title="Mclaren car"></td>
+        </tr>
+        <tr>
+            <td>Ferrari ecstatic after a perfect first race weekend where they
+                finished an amazing 1-2. Charles Leclerc has beaten his teammate 
+                to which Carlos Sainz has not taken kindly and many suggest that 
+                Carlos is ready to show his speed at the upcoming Saudi Grand Prix.
+            </td>
+            <td><img src="images/charles.jpg" alt="Ferrari car" title="Ferrari"></td>
+        </tr>
+    </table>
 </body>
 </html>
