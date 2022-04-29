@@ -54,8 +54,10 @@
         border-radius: 25%;
         padding: 10px;
         margin: 20px;
-        margin-top: 3%;
+        margin-top: 5%;
         opacity: 75%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
     li a {
         text-decoration: none;
@@ -65,7 +67,7 @@
     img{
         width: 100%;
     }
-    #p{
+    p{
         text-align: center;
         font-size: 1.2em;
         color: rgba(0, 170, 255, 0.548);
@@ -74,6 +76,11 @@
         background-color: #ffd8c5;
     }
     #dark{
+        text-decoration: none;
+        border: none;
+        background-color:#efb394;
+    }
+    #TN{
         text-decoration: none;
         border: none;
         background-color:#efb394;
@@ -89,10 +96,11 @@
         <li><a href="../sitemap.html"><b>Sitemap</b></a></li>
     </ul>
     <h1 id="updates">Most recent updates:-</h1>
-    <p id="p">Would you like a <button id="dark">Dark</button> theme?</p>
+    <p>Would you like a <button id="dark">Dark</button> theme?</p>
+    <p>Would you like to know about <button id="TN">Team news?</button></p>
     <table id="table">
         <tr>
-            <td>Though a rocky start for Mclaren they seem to have now gotten 
+            <td id="text1">Though a rocky start for Mclaren they seem to have now gotten 
                 a handle it seems, at least for the moment. With Lando Norris's third 
                 place podium in the last Grand Prix, things have been looking up and 
                 the Mclaren crew now are looking more motivated than ever. Hopefully, we 
@@ -102,7 +110,7 @@
             <td><img src="images/mclaren.jpg" alt="Mclaren car" title="Mclaren car" id="mcl"></td>
         </tr>
         <tr>
-            <td>Ferrari have been consistently getting the upper hand over 
+            <td id="text2">Ferrari have been consistently getting the upper hand over 
                 RedBull despite them having the better car due to their 
                 reliability issues. However, during this time one of their
                 drivers is not particularly happy, and that is Carlos Sainz.
@@ -116,6 +124,31 @@
     </table>
     <script>
         let i=0;
+        let n=0;
+        function txtchange(){
+            if(n==0){
+                document.getElementById("TN").innerText="Driver news?";
+                document.getElementById("text1").innerText="Due to the poor reliability of the redbull car, Christian Horner, the team principal of the team is under a lot of pressure from not only the fans, but also the board to fix their car. It is imperative for them to come back strong after their controversial win last year with Max Verstappen over Lewis Hamilton. However, it seems like these issues will take longer than expected to rectify.";
+                document.getElementById("text2").innerText="In the 2020 season Aston Martin had a controversial start to their season when they basically copied their entire design from last year's winning car, but it seems like it has been all going downhill for them since then. They seem to have had the worst start to a season thus far and it can be said that the rule change has not changed their fortune.";
+                let img1= document.getElementById("fer");
+                img1.src= "images/aston.jpg";
+                n++;
+                let img= document.getElementById("mcl");
+                img.src="images/redbull.jpg";
+            }
+            else {
+                n=0;
+                document.getElementById("TN").innerText="team news?";
+                document.getElementById("text1").innerText="Though a rocky start for Mclaren they seem to have now gotten a handle it seems, at least for the moment. With Lando Norris's third place podium in the last Grand Prix, things have been looking up and the Mclaren crew now are looking more motivated than ever. Hopefully, we continue to see this upward trend in the upcoming races. Hover over the image to Lando Norris.";
+                let img1= document.getElementById("mcl");
+                img1.src="images/mclaren.jpg";
+                let img= document.getElementById("fer");
+                img.src= "images/charles.jpg";
+            }
+        }
+        document.getElementById("TN").onclick= function(){
+            txtchange();
+        }
         function dark(){
             if(i==0){
                 document.querySelector("body").style.backgroundColor= "black";
