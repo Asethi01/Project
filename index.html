@@ -10,7 +10,7 @@
 <style>
     body{
         background-color: white;
-        background-size: 1550px 1000px;
+        background-size: 1550px 800px;
         background-repeat: no-repeat;
         /* background-image: url("images/merc.gif"); */
     }
@@ -26,6 +26,7 @@
         display: inline-block;
         border-right: 2.25px solid white;
         font-size: 1.3em;
+        padding-left: 1%;
     }
     ul{
         background-color:rgba(0, 170, 255, 0.548) ;
@@ -34,6 +35,8 @@
         margin: 20px;
         margin-top: 5%;
         opacity: 75%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
     li a {
         text-decoration: none;
@@ -83,7 +86,7 @@
             document.querySelector("body").style.backgroundImage= slide[i];
             i++;
             console.log(i);
-            setTimeout(slideshow,1000);
+            setTimeout(slideshow,2000);
         }
         document.querySelector("body").onload= function(){
             slideshow();
