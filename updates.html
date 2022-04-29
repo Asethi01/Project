@@ -4,31 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recent Updates</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
 </head>
 <style>
      #updates{
-        color: beige;
+        color:rgba(0, 170, 255, 0.548);
         font-family: sans-serif;
+        text-align: center;
     }
     tr, td{
-    border: 3px solid rgb(12, 12, 160);
-    padding: 3px;
-    color: rgb(216, 169, 81);
-    vertical-align: top; 
-    background-color: rgba(245, 245, 220, 0.616);   
-    font-family: sans-serif;
-    font-style: italic;
-    font-size: larger;
+        border: 3px solid rgb(12, 12, 160);
+        padding: 3px;
+        color: rgb(186, 137, 45);
+        vertical-align: top; 
+        /* background-color: rgba(245, 245, 220, 0.616);    */
+        background-color: #ffd8c5;
+        font-family: sans-serif;
+        font-style: italic;
+        font-size: larger;
     }
     table{
-    width: 60em;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-}
-li{
+        width: 60em;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+    }
+    /* li{
         display: inline-block;
         border-right: 2.25px solid red;
         font-size: 1.3em;
@@ -40,36 +43,123 @@ li{
         text-decoration: none;
         color: lightgray;
         padding: 0.5em 8px 0.5em;
+    } */
+    li{
+        display: inline-block;
+        border-right: 2.25px solid white;
+        font-size: 1.3em;
+    }
+    ul{
+        background-color:rgba(0, 170, 255, 0.548) ;
+        border-radius: 25%;
+        padding: 10px;
+        margin: 20px;
+        margin-top: 3%;
+        opacity: 75%;
+    }
+    li a {
+        text-decoration: none;
+        color: lightgray;
+        padding: 0.5em 8px 0.5em;
+    }
+    img{
+        width: 100%;
+    }
+    #p{
+        text-align: center;
+        font-size: 1.2em;
+        color: rgba(0, 170, 255, 0.548);
+    }
+    body{
+        background-color: #ffd8c5;
+    }
+    #dark{
+        text-decoration: none;
+        border: none;
+        background-color:#efb394;
     }
 </style>
 <body>
     <ul>
         <li><img src="favicon.png" alt="logo" title="favicon"></li>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../updates.html">Recent Updates</a></li>
-        <li><a href="../schedule.html">Recent Race Highlights and Schedule</a></li>
-        <li><a href="../Feedback.html">Customer Feedback</a></li>
-        <li><a href="../sitemap.html">Sitemap</a></li>
+        <li><a href="../index.html"><strong>Home</strong></a></li>
+        <li><a href="../updates.html"><b>Recent Updates</b></a></li>
+        <li><a href="../schedule.html"><b>Recent Race Highlights and Schedule</b></a></li>
+        <li><a href="../Feedback.html"><b>Customer Feedback</b></a></li>
+        <li><a href="../sitemap.html"><b>Sitemap</b></a></li>
     </ul>
     <h1 id="updates">Most recent updates:-</h1>
-    <table>
+    <p id="p">Would you like a <button id="dark">Dark</button> theme?</p>
+    <table id="table">
         <tr>
-            <td>Troubles at Mclaren after a dissapointing start. After an amazing showing
-                in the barcelona test, both drivers have struggled to be at one
-                with the car and are constantly complaining. After the dissapointing
-                finish with no points in Bahrain in it clear that they have lost their 
-                momentum from previous years.
+            <td>Though a rocky start for Mclaren they seem to have now gotten 
+                a handle it seems, at least for the moment. With Lando Norris's third 
+                place podium in the last Grand Prix, things have been looking up and 
+                the Mclaren crew now are looking more motivated than ever. Hopefully, we 
+                continue to see this upward trend in the upcoming races. Hover over the 
+                image to Lando Norris. 
             </td>
-            <td><img src="images/mclaren.jpg" alt="Mclaren car" title="Mclaren car"></td>
+            <td><img src="images/mclaren.jpg" alt="Mclaren car" title="Mclaren car" id="mcl"></td>
         </tr>
         <tr>
-            <td>Ferrari ecstatic after a perfect first race weekend where they
-                finished an amazing 1-2. Charles Leclerc has beaten his teammate 
-                to which Carlos Sainz has not taken kindly and many suggest that 
-                Carlos is ready to show his speed at the upcoming Saudi Grand Prix.
+            <td>Ferrari have been consistently getting the upper hand over 
+                RedBull despite them having the better car due to their 
+                reliability issues. However, during this time one of their
+                drivers is not particularly happy, and that is Carlos Sainz.
+                This is due to a string of bad results where he failed to 
+                even finish the race. Although he has just signed a new contract 
+                till 2024, his current time at Ferrari has not got off to the best
+                of starts.
             </td>
-            <td><img src="images/charles.jpg" alt="Ferrari car" title="Ferrari"></td>
+            <td><img src="images/charles.jpg" alt="Ferrari car" title="Ferrari" id="fer"></td>
         </tr>
     </table>
+    <script>
+        let i=0;
+        function dark(){
+            if(i==0){
+                document.querySelector("body").style.backgroundColor= "black";
+                document.getElementById("dark").innerText="Light";
+                i++;
+            }
+            else {
+                document.querySelector("body").style.backgroundColor= "#ffd8c5";
+                document.getElementById("dark").innerText="Dark";
+                i=0;
+            }
+        }
+        function mclover(){
+                console.log("Mcl if");
+                let img= document.getElementById("mcl");
+                img.src= "images/lando.jpg";
+        }
+        function ferover(){
+                let img= document.getElementById("fer");
+                img.src= "images/carlos.jpg";
+        }
+        function mclout(){
+                let img= document.getElementById("mcl");
+                img.src="images/mclaren.jpg";
+        }
+        function ferout(){
+                let img= document.getElementById("fer");
+                img.src= "images/charles.jpg";
+        }
+        document.getElementById("dark").onclick= function(){
+            dark();
+        }
+        document.getElementById("mcl").onmouseover= function(){
+            mclover();
+        };
+        document.getElementById("mcl").onmouseout= function(){
+            mclout();
+        };
+        document.getElementById("fer").onmouseover= function(){
+            ferover();
+        };
+        document.getElementById("fer").onmouseout= function(){
+            ferout();
+        };
+    </script>
 </body>
 </html>
