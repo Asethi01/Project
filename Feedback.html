@@ -9,8 +9,7 @@
 </head>
 <style>
     body{
-        background-color: black;
-    }
+        background-color: #ffd8c5;    }
     li{
         display: inline-block;
         border-right: 2.25px solid white;
@@ -68,6 +67,13 @@
             <div>
                 <textarea name="comments" id="comments" cols="25" rows="5" placeholder="suggestions"></textarea>
             </div>
+            <div>
+                <label for="comments">Rate out of 10 this website</label>
+            </div>
+            <p id="p"></p>
+            <div>
+                <textarea name="rate" id="rate" cols="30" rows="10"></textarea>
+            </div>
         </div>
     </form>
     <button type="submit">
@@ -76,5 +82,15 @@
     <button type="reset">
         RESET <img src="images/reset.png" alt="reset" height="30">
     </button>
+    <script>
+        function number(){
+            if(isNaN(document.getElementById("rate"))){
+                document.getElementById("p").innerText="Please enter a number";
+            }
+        }
+        document.getElementById("rate").oninput= function(){
+            number();
+        }
+    </script>
 </body>
 </html>
